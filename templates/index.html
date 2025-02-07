@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wavelet - Music Discovery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover new music through YouTube in a minimalist environment">
+    
+    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='js/player.js') }}" as="script">
+    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="app-container">
+        <div class="glass-container">
+            <header>
+                <div class="logo">
+                    <i class="fas fa-waveform"></i>
+                    <h1>Wavelet</h1>
+                </div>
+                <p class="subtitle">Discover music through YouTube</p>
+                <p class="powered-by">Powered by <i class="fab fa-youtube"></i> YouTube</p>
+            </header>
+            
+            <div class="player-section">
+                <div class="player-wrapper">
+                    <div id="customPlayer" class="custom-player">
+                        <video id="videoPlayer">
+                            Your browser does not support the video element.
+                        </video>
+                        <div class="player-controls">
+                            <div class="progress-bar">
+                                <div class="progress-filled"></div>
+                            </div>
+                            <div class="controls-main">
+                                <button id="prevButton" class="control-button" title="Previous">
+                                    <i class="fas fa-backward"></i>
+                                </button>
+                                <button id="playPauseButton" class="control-button primary" title="Play/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="nextButton" class="control-button" title="Next">
+                                    <i class="fas fa-forward"></i>
+                                </button>
+                                <div class="volume-control">
+                                    <button id="volumeButton" class="control-button" title="Volume">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="volume-slider">
+                                        <div class="volume-filled"></div>
+                                    </div>
+                                </div>
+                                <div class="time-display">
+                                    <span id="currentTime">0:00</span>
+                                    <span>/</span>
+                                    <span id="duration">0:00</span>
+                                </div>
+                                <a id="youtubeLink" class="youtube-button" target="_blank" title="Watch on YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="playerOverlay" class="player-overlay">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-info">
+                    <div class="song-details">
+                        <div id="songInfo" class="song-title">Loading...</div>
+                        <div class="meta-info">
+                            <span id="channelInfo" class="channel-name"></span>
+                            <span class="dot">•</span>
+                            <span id="songDuration" class="duration"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html> 

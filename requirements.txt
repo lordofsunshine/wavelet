@@ -1,0 +1,4 @@
+quart
+yt-dlp
+aiohttp
+youtube-search-python 
