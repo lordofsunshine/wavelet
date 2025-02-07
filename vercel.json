@@ -1,5 +1,11 @@
 {
     "version": 2,
+    "functions": {
+        "api/get_random_song.py": {
+            "memory": 1024,
+            "maxDuration": 10
+        }
+    },
     "builds": [
         {
             "src": "app.py",
@@ -10,6 +16,14 @@
         {
             "src": "/(.*)",
             "dest": "app.py"
+        },
+        {
+            "src": "/api/get_random_song",
+            "dest": "/api/get_random_song.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.py"
         }
     ]
 } 

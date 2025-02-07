@@ -161,7 +161,7 @@ async function loadRandomSong() {
     while (retries > 0) {
         try {
             console.log('Fetching random song...');
-            const response = await fetch('/get_random_song', {
+            const response = await fetch('/api/get_random_song', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json'
